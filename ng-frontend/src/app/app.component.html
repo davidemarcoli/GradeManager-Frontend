@@ -1,6 +1,11 @@
-<nav>
-  <a class="button" routerLink="/list-grades">Show Grades</a> |
-  <a class="button" routerLink="/create-grade">Create Grades</a>
-</nav>
+<div *ngIf="isLoggedin === true">
+  <app-navbar></app-navbar>
+  <br>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="isLoggedin !== true">
+  <div>
+    <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+  </div>
+</div>

@@ -1,26 +1,53 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ListGradesComponent } from './Grades/list-grades/list-grades.component';
-import { CreateGradeComponent } from './Grades/create-grade/create-grade.component';
-import { HttpClientModule } from "@angular/common/http";
-import { Error404Component } from './error404/error404.component';
+import {AgGridModule} from 'ag-grid-angular';
+
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ListGradesComponent} from './Grades/list-grades/list-grades.component';
+import {CreateGradeComponent} from './Grades/create-grade/create-grade.component';
+import {HttpClientModule} from "@angular/common/http";
+import {Error404Component} from './error404/error404.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {NavbarComponent} from './navbar/navbar.component';
+import {ListGradesGridComponent} from './Grades/list-grades-grid/list-grades-grid.component';
+
+import {SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login';
+import {GoogleLoginProvider} from 'angularx-social-login';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListGradesComponent,
     CreateGradeComponent,
-    Error404Component
+    Error404Component,
+    NavbarComponent,
+    ListGradesGridComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    AgGridModule.withComponents([]),
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: 'SocialAuthServiceConfig',
+    useValue: {
+      autoLogin: false,
+      providers: [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider(
+            '1026375117557-o1flvalcb4gqm3e96n9ceaeoriucus2f.apps.googleusercontent.com'
+          )
+        }
+      ]
+    } as SocialAuthServiceConfig,
+  }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
