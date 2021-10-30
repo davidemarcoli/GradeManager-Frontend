@@ -15,6 +15,7 @@ import {ListGradesGridComponent} from './Grades/list-grades-grid/list-grades-gri
 
 import {SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login';
 import {GoogleLoginProvider} from 'angularx-social-login';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {GoogleLoginProvider} from 'angularx-social-login';
     CreateGradeComponent,
     Error404Component,
     NavbarComponent,
-    ListGradesGridComponent
+    ListGradesGridComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
