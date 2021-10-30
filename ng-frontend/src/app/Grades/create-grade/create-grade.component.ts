@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Grade} from "../../model/Grade";
 import {User} from "../../model/User";
 import {Googleuser} from "../../global/googleuser";
+import {AppSettings} from "../../app.settings";
 
 @Component({
   selector: 'app-create-grade',
@@ -15,9 +16,9 @@ import {Googleuser} from "../../global/googleuser";
 export class CreateGradeComponent implements OnInit {
 
   form = this.formBuilder.group({
-    grade: '',
+    grade: 0,
     theme: '',
-    user: User,
+    //user: User,
   });
 
   constructor(private formBuilder: FormBuilder, private http: HttpClient) {
@@ -49,7 +50,7 @@ export class CreateGradeComponent implements OnInit {
     //   user: new User(this.form.controls.user.value.id, this.form.controls.theme.value.username, this.form.controls.theme.value.password),
     // }, options).subscribe(data => console.log(data));
 
-    this.http.post<Grade>('https://grade-manager.herokuapp.com/grades/', {
+    this.http.post<Grade>(AppSettings.BASE_URL + 'grades/', {
       grade: this.form.controls.grade.value,
       theme: this.form.controls.theme.value,
       googleUserId: Googleuser.user.id
