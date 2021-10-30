@@ -16,8 +16,11 @@ import {ListGradesGridComponent} from './Grades/list-grades-grid/list-grades-gri
 import {SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login';
 import {GoogleLoginProvider} from 'angularx-social-login';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { PieChartComponent } from './diagrams/pie-chart/pie-chart.component';
+import { ThemeAverageChartComponent } from './diagrams/theme-average-chart/theme-average-chart.component';
 import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component";
+
+import { NgxChartsModule }from '@swimlane/ngx-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,7 @@ import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component
     NavbarComponent,
     ListGradesGridComponent,
     DashboardComponent,
-    PieChartComponent,
+    ThemeAverageChartComponent,
     UpdateGradeComponent
   ],
   imports: [
@@ -37,7 +40,9 @@ import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component
     HttpClientModule,
     ReactiveFormsModule,
     AgGridModule.withComponents([]),
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule,
+    NgxChartsModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

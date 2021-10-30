@@ -33,7 +33,7 @@ export class UpdateGradeComponent implements OnInit {
 
   ngOnInit(): void {
     const options = {headers: {'Content-Type': 'application/json'}};
-    this.http.get<any>('https://grade-manager.herokuapp.com/grades/getall').subscribe(data => {
+    this.http.get<any>(AppSettings.BASE_URL + 'grades/getall').subscribe(data => {
       this.grades = data;
       console.log(data);
     })
@@ -41,7 +41,7 @@ export class UpdateGradeComponent implements OnInit {
 
   async onDropdownChange(event: any) {
     this.id = event.target.value;
-    this.newGrade = await this.http.get<Grade>('https://grade-manager.herokuapp.com/grades/' + this.id).toPromise();
+    this.newGrade = await this.http.get<Grade>(AppSettings.BASE_URL + 'grades/' + this.id).toPromise();
   }
 
   onSubmit(): void {
