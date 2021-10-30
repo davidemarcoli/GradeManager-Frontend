@@ -17,6 +17,7 @@ import {SocialLoginModule, SocialAuthServiceConfig} from 'angularx-social-login'
 import {GoogleLoginProvider} from 'angularx-social-login';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PieChartComponent } from './diagrams/pie-chart/pie-chart.component';
+import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { PieChartComponent } from './diagrams/pie-chart/pie-chart.component';
     ListGradesGridComponent,
     DashboardComponent,
     PieChartComponent,
+    UpdateGradeComponent
   ],
   imports: [
     BrowserModule,
