@@ -33,7 +33,7 @@ export class UpdateGradeComponent implements OnInit {
 
   ngOnInit(): void {
     const options = {headers: {'Content-Type': 'application/json'}};
-    this.http.get<any>(AppSettings.BASE_URL + 'grades/getall').subscribe(data => {
+    this.http.get<any>(AppSettings.BASE_URL + 'grades/getbyuser/' + Googleuser.user.id).subscribe(data => {
       this.grades = data;
       console.log(data);
     })
@@ -60,7 +60,8 @@ export class UpdateGradeComponent implements OnInit {
     //   user: new User(this.form.controls.user.value.id, this.form.controls.theme.value.username, this.form.controls.theme.value.password),
     // }, options).subscribe(data => console.log(data));
 
-    this.http.post<Grade>(AppSettings.BASE_URL + 'grades/', {
+    this.http.put<Grade>(AppSettings.BASE_URL + 'grades/', {
+      id: this.newGrade.id,
       grade: this.form.controls.grade.value,
       theme: this.form.controls.theme.value,
       googleUserId: Googleuser.user.id

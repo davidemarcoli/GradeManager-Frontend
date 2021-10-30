@@ -1,9 +1,9 @@
 <div class="container">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-    <select id="updateGradeDropdown" (change)="onDropdownChange($event)">
+    <select class="form-control" id="updateGradeDropdown" (change)="onDropdownChange($event)">
       <option value="0" disabled selected></option>
-      <option *ngFor="let grade of grades" value="{{ grade.id }}"></option>
+      <option *ngFor="let grade of grades" value="{{ grade.id }}">{{grade.grade}} |  {{grade.theme}}</option>
     </select>
 
     <div>
@@ -45,6 +45,6 @@
 
 
     <br>
-    <button class="button" type="submit">Add Grade</button>
+    <button class="button btn-warning" type="submit">Add Grade</button>
   </form>
 </div>
