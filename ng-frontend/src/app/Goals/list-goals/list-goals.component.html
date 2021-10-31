@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h2>Your Goals</h2>
+  <br>
+
+  <table class="table">
+    <thead>
+    <th scope="col">Theme</th>
+    <th scope="col">Goal</th>
+    <th scope="col">Average</th>
+    <th scope="col">Success</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let goal of goals">
+      <td>{{goal.theme}}</td>
+      <td>{{goal.gradeGoal}}</td>
+      <td>{{getAverage(goal.theme).value}}</td>
+      <td *ngIf="isGoalReached(goal)">✔</td>
+      <td *ngIf="!isGoalReached(goal)">❌</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

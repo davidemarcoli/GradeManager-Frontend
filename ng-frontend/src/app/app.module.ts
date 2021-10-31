@@ -23,6 +23,10 @@ import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { CoolSocialLoginButtonsModule } from "@angular-cool/social-login-buttons";
+import { CreateGoalComponent } from './Goals/create-goal/create-goal.component';
+import { ListGoalsComponent } from './Goals/list-goals/list-goals.component';
+import { ListGoalsAdvancedComponent } from "./Goals/list-goals-advanced/list-goals-advanced.component";
+import { UpdateGoalComponent } from './Goals/update-goal/update-goal.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { CoolSocialLoginButtonsModule } from "@angular-cool/social-login-buttons
     ListGradesGridComponent,
     DashboardComponent,
     ThemeAverageChartComponent,
-    UpdateGradeComponent
+    UpdateGradeComponent,
+    CreateGoalComponent,
+    ListGoalsComponent,
+    ListGoalsAdvancedComponent,
+    UpdateGoalComponent
   ],
   imports: [
     BrowserModule,

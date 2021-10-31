@@ -6,6 +6,9 @@ import { Error404Component } from "./error404/error404.component";
 import {ListGradesGridComponent} from "./Grades/list-grades-grid/list-grades-grid.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component";
+import {CreateGoalComponent} from "./Goals/create-goal/create-goal.component";
+import {ListGoalsComponent} from "./Goals/list-goals/list-goals.component";
+import {UpdateGoalComponent} from "./Goals/update-goal/update-goal.component";
 
 const routes: Routes = [
   { path: '', redirectTo: "dashboard", pathMatch: "full"},
@@ -13,6 +16,9 @@ const routes: Routes = [
   { path: 'list-grades', component: ListGradesGridComponent },
   { path: 'create-grade', component: CreateGradeComponent },
   { path: 'update-grade', component: UpdateGradeComponent },
+  { path: 'list-goals', component: ListGoalsComponent },
+  { path: 'create-goal', component: CreateGoalComponent },
+   { path: 'update-goal', component: UpdateGoalComponent },
   { path: 'dashboard', component: DashboardComponent },
 
   //Error Page not found
