@@ -50,6 +50,6 @@ export class DeleteGradeComponent implements OnInit {
     //   user: new User(this.form.controls.user.value.id, this.form.controls.theme.value.username, this.form.controls.theme.value.password),
     // }, options).subscribe(data => console.log(data));
 
-    this.http.delete<any>(AppSettings.BASE_URL + 'grades/' + this.id);
+    this.http.delete<any>(AppSettings.BASE_URL + 'grades/' + this.id, options).subscribe(data => console.log(data));
   }
 }
