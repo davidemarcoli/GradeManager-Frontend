@@ -2,6 +2,7 @@ import {Component, OnInit} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Googleuser} from "../../global/googleuser";
 import {AppSettings} from "../../app.settings";
+import {Grade} from "../../model/Grade";
 
 @Component({
   selector: "app-theme-average-chart",
@@ -12,6 +13,10 @@ export class ThemeAverageChartComponent implements OnInit {
 
   public data: any;
 
+  public grades: Grade[] | undefined;
+
+  public theme: string | undefined;
+
   constructor(private http: HttpClient) {
   }
 
@@ -21,6 +26,20 @@ export class ThemeAverageChartComponent implements OnInit {
       this.data = data;
       console.log(data);
     })
+    this.http.get<Grade[]>(AppSettings.BASE_URL + 'grades/getbyuser/' + Googleuser.user.id).subscribe(data => {
+      this.grades = data;
+      console.log(data);
+    })
+  }
+
+  onChartClick(event: any) {
+    //console.log(event);
+    this.theme = event.name;
+
+    // @ts-ignore
+    /*for (let i = 0; i < this.grades.length; i++) {
+      if ()
+    }*/
   }
 
 }

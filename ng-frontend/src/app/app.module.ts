@@ -22,6 +22,8 @@ import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component
 import { NgxChartsModule }from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { CoolSocialLoginButtonsModule } from "@angular-cool/social-login-buttons";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AgGridModule.withComponents([]),
     SocialLoginModule,
     BrowserAnimationsModule,
-    NgxChartsModule
+    NgxChartsModule,
+    CoolSocialLoginButtonsModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

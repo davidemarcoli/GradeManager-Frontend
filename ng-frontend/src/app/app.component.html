@@ -5,7 +5,8 @@
   <router-outlet></router-outlet>
 </div>
 <div *ngIf="isLoggedin !== true">
-  <div>
-    <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>
+  <div style="text-align: center; margin-top: 50vh;">
+<!--    <button type="button" (click)="loginWithGoogle()" class="btn btn-danger">Login with Google</button>-->
+    <cool-google-button (click)="loginWithGoogle()">Login with Google</cool-google-button>
   </div>
 </div>
