@@ -28,6 +28,7 @@ import { ListGoalsComponent } from './Goals/list-goals/list-goals.component';
 import { ListGoalsAdvancedComponent } from "./Goals/list-goals-advanced/list-goals-advanced.component";
 import { UpdateGoalComponent } from './Goals/update-goal/update-goal.component';
 import { DeleteGradeComponent } from './Grades/delete-grade/delete-grade.component';
+import { DeleteGoalComponent } from './Goals/delete-goal/delete-goal.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DeleteGradeComponent } from './Grades/delete-grade/delete-grade.compone
     ListGoalsComponent,
     ListGoalsAdvancedComponent,
     UpdateGoalComponent,
-    DeleteGradeComponent
+    DeleteGradeComponent,
+    DeleteGoalComponent
   ],
   imports: [
     BrowserModule,
