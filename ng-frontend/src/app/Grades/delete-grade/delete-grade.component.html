@@ -1,1 +1,11 @@
-<p>delete-grade works!</p>
+<div class="container">
+
+    <select class="form-control" id="updateGradeDropdown" (change)="onDropdownChange($event)">
+      <option value="0" disabled selected></option>
+      <option *ngFor="let grade of grades" value="{{ grade.id }}">{{grade.grade}} |  {{grade.theme}}</option>
+    </select>
+
+    <br>
+    <button class="button btn-danger" (click)="onSubmit()">Delete Grade</button>
+
+</div>
