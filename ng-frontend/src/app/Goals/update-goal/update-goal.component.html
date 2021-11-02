@@ -21,6 +21,6 @@
     </div>
 
     <br>
-    <button class="button btn-warning" type="submit">Update Goal</button>
+    <button class="button btn-warning" [disabled]="form.status == 'INVALID'" type="submit">Update Goal</button>
   </form>
 </div>

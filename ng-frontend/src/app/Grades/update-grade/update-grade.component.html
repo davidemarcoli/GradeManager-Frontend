@@ -44,6 +44,6 @@
 <!--    </div>-->
 
     <br>
-    <button class="button btn-warning" type="submit">Update Grade</button>
+    <button class="button btn-warning" [disabled]="form.status == 'INVALID'" type="submit">Update Grade</button>
   </form>
 </div>

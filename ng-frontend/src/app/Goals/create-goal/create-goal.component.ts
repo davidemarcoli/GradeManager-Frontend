@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {Grade} from "../../model/Grade";
 import {AppSettings} from "../../app.settings";
@@ -8,13 +8,20 @@ import {Googleuser} from "../../global/googleuser";
 @Component({
   selector: 'app-create-goal',
   templateUrl: './create-goal.component.html',
-  styleUrls: ['./create-goal.component.css']
+  styleUrls: ['./create-goal.component.css', '../../css/formValidation.css']
 })
 export class CreateGoalComponent implements OnInit {
 
   form = this.formBuilder.group({
-    gradeGoal: 0,
-    theme: '',
+    gradeGoal: ['', [
+      Validators.min(1),
+      Validators.max(6),
+      Validators.required,
+    ]],
+    theme: ['', [
+      Validators.required,
+      Validators.maxLength(255),
+    ]],
     //user: User,
   });
 

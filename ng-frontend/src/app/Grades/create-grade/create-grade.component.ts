@@ -1,5 +1,5 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
 import {Grade} from "../../model/Grade";
 import {User} from "../../model/User";
@@ -9,24 +9,35 @@ import {AppSettings} from "../../app.settings";
 @Component({
   selector: 'app-create-grade',
   templateUrl: './create-grade.component.html',
-  styleUrls: ['./create-grade.component.css']
+  styleUrls: ['./create-grade.component.css', '../../css/formValidation.css']
 })
 
 @Injectable()
 export class CreateGradeComponent implements OnInit {
 
   form = this.formBuilder.group({
-    grade: 0,
-    theme: '',
-    //user: User,
-  });
+      grade: ['', [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(6),
+      ]],
+      theme: ['', [
+        Validators.required,
+        Validators.maxLength(255),
+      ]],
+    }
+  )
+  ;
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient
+  ) {
   }
 
-  // elements : Array<User> | undefined
+// elements : Array<User> | undefined
 
-  ngOnInit(): void {
+  ngOnInit()
+    :
+    void {
     // const options = {headers: {'Content-Type': 'application/json'}};
     // this.http.get<any>('https://grade-manager.herokuapp.com/users/getall').subscribe(data => {
     //   this.elements = data;
@@ -34,7 +45,9 @@ export class CreateGradeComponent implements OnInit {
     // })
   }
 
-  onSubmit(): void {
+  onSubmit()
+    :
+    void {
     const options = {
       headers: {
         'Content-Type': 'application/json',

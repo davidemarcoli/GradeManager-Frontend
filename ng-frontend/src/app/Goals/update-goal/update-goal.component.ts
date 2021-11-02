@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Grade} from "../../model/Grade";
-import {FormBuilder} from "@angular/forms";
+import {FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 import {AppSettings} from "../../app.settings";
 import {Googleuser} from "../../global/googleuser";
@@ -9,13 +9,19 @@ import {Goal} from "../../model/Goal";
 @Component({
   selector: 'app-update-goal',
   templateUrl: './update-goal.component.html',
-  styleUrls: ['./update-goal.component.css']
+  styleUrls: ['./update-goal.component.css', '../../css/formValidation.css']
 })
 export class UpdateGoalComponent implements OnInit {
 
   form = this.formBuilder.group({
-    gradeGoal: 0,
-    theme: '',
+    gradeGoal: ['', [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(6),
+    ]],
+    theme: ['', [
+      Validators.required,
+    ]],
   });
 
   newGoal: Goal;

@@ -15,6 +15,6 @@
       <input class="form-control" id="theme" type="text" formControlName="theme">
     </div>
     <br>
-    <button class="button btn-primary" type="submit">Add Goal</button>
+    <button class="button btn-primary" [disabled]="form.status == 'INVALID'" type="submit">Add Goal</button>
   </form>
 </div>

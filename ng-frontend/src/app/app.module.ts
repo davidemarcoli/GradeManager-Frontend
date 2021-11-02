@@ -29,6 +29,9 @@ import { ListGoalsAdvancedComponent } from "./Goals/list-goals-advanced/list-goa
 import { UpdateGoalComponent } from './Goals/update-goal/update-goal.component';
 import { DeleteGradeComponent } from './Grades/delete-grade/delete-grade.component';
 import { DeleteGoalComponent } from './Goals/delete-goal/delete-goal.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatIconModule} from "@angular/material/icon";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { DeleteGoalComponent } from './Goals/delete-goal/delete-goal.component';
     SocialLoginModule,
     BrowserAnimationsModule,
     NgxChartsModule,
-    CoolSocialLoginButtonsModule
+    CoolSocialLoginButtonsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',

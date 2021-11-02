@@ -1,5 +1,5 @@
 import {Component, Injectable, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 import {HttpClient} from "@angular/common/http";
 import {Grade} from "../../model/Grade";
 import {User} from "../../model/User";
@@ -9,15 +9,21 @@ import {AppSettings} from "../../app.settings";
 @Component({
   selector: 'app-create-grade',
   templateUrl: './update-grade.component.html',
-  styleUrls: ['./update-grade.component.css']
+  styleUrls: ['./update-grade.component.css', '../../css/formValidation.css']
 })
 
 @Injectable()
 export class UpdateGradeComponent implements OnInit {
 
   form = this.formBuilder.group({
-    grade: 0,
-    theme: '',
+    grade: ['', [
+      Validators.required,
+      Validators.min(1),
+      Validators.max(6),
+    ]],
+    theme: ['', [
+      Validators.required,
+    ]],
     //user: User,
   });
 
