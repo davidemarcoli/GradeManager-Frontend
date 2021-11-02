@@ -7,7 +7,7 @@
 <!--</ngx-charts-pie-chart>-->
 
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-10">
     <ngx-charts-bar-vertical
       [results]="data"
       [legend]="true"
@@ -23,7 +23,7 @@
       (select)="onChartClick($event)">
     </ngx-charts-bar-vertical>
   </div>
-  <div class="col-lg-4">
+  <div class="col-lg-2">
     <ul class="list-group">
       <div *ngFor="let grade of grades">
         <li class="list-group-item" *ngIf="grade.theme == theme">{{grade.grade}}</li>

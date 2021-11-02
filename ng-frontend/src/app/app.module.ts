@@ -32,6 +32,7 @@ import { DeleteGoalComponent } from './Goals/delete-goal/delete-goal.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,8 @@ import {MatMenuModule} from "@angular/material/menu";
     CoolSocialLoginButtonsModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    NgbModule
   ],
   providers: [{
     provide: 'SocialAuthServiceConfig',
