@@ -1,1 +1,11 @@
-<p>delete-goal works!</p>
+<div class="container">
+
+  <select class="form-control" id="updateGoalDropdown" (change)="onDropdownChange($event)">
+    <option value="0" disabled selected></option>
+    <option *ngFor="let goal of goals" value="{{ goal.id }}">{{goal.theme}} |  {{goal.gradeGoal}}</option>
+  </select>
+
+  <br>
+  <button class="button btn-danger" (click)="onSubmit()">Delete Goal</button>
+
+</div>

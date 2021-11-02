@@ -10,6 +10,7 @@ import {DeleteGradeComponent} from "./Grades/delete-grade/delete-grade.component
 import {CreateGoalComponent} from "./Goals/create-goal/create-goal.component";
 import {ListGoalsComponent} from "./Goals/list-goals/list-goals.component";
 import {UpdateGoalComponent} from "./Goals/update-goal/update-goal.component";
+import {DeleteGoalComponent} from "./Goals/delete-goal/delete-goal.component";
 
 const routes: Routes = [
   { path: '', redirectTo: "dashboard", pathMatch: "full"},
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'delete-grade', component: DeleteGradeComponent },
   { path: 'list-goals', component: ListGoalsComponent },
   { path: 'create-goal', component: CreateGoalComponent },
-   { path: 'update-goal', component: UpdateGoalComponent },
+  { path: 'update-goal', component: UpdateGoalComponent },
+  { path: 'delete-goal', component: DeleteGoalComponent },
   { path: 'dashboard', component: DashboardComponent },
 
   //Error Page not found
