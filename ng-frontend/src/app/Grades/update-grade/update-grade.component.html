@@ -3,7 +3,7 @@
 
     <select class="form-control" id="updateGradeDropdown" (change)="onDropdownChange($event)">
       <option value="0" disabled selected></option>
-      <option *ngFor="let grade of grades" value="{{ grade.id }}">{{grade.grade}} |  {{grade.theme}}</option>
+      <option *ngFor="let grade of grades" value="{{ grade.id }}">{{grade.grade}} ({{grade.weight * 100}}%) |  {{grade.theme}}</option>
     </select>
 
     <div>
@@ -11,6 +11,13 @@
         Grade
       </label>
       <input class="form-control" id="grade" type="number" min="1" max="6" step="0.1" formControlName="grade" [ngModel]="newGrade.grade">
+    </div>
+
+    <div>
+      <label for="weight">
+        Weight
+      </label>
+      <input class="form-control" id="weight" type="number" min="0" max="10" step="0.01" formControlName="weight" [ngModel]="newGrade.weight">
     </div>
 
     <div>

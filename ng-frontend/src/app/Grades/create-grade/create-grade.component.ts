@@ -21,6 +21,11 @@ export class CreateGradeComponent implements OnInit {
         Validators.min(1),
         Validators.max(6),
       ]],
+      weight: ['', [
+        Validators.required,
+        Validators.min(0),
+        Validators.max(10),
+      ]],
       theme: ['', [
         Validators.required,
         Validators.maxLength(255),
@@ -65,6 +70,7 @@ export class CreateGradeComponent implements OnInit {
 
     this.http.post<Grade>(AppSettings.BASE_URL + 'grades/', {
       grade: this.form.controls.grade.value,
+      weight: this.form.controls.weight.value,
       theme: this.form.controls.theme.value,
       googleUserId: Googleuser.user.id
     }, options).subscribe(data => console.log(data));

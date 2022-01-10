@@ -16,6 +16,7 @@ export class ListGradesGridComponent implements OnInit {
 
   columnDefs: ColDef[] = [
     { field: 'grade', sortable: true, filter: "agNumberColumnFilter" },
+    { field: 'weight', sortable: true, filter: "agNumberColumnFilter" },
     { field: 'theme', sortable: true, filter: "agMultiColumnFilter" }
   ];
 
