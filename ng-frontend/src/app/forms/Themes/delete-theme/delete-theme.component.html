@@ -1,0 +1,11 @@
+<div class="container">
+
+  <select class="form-control" id="updateGoalDropdown" (change)="onDropdownChange($event)">
+    <option value="0" disabled selected></option>
+    <option *ngFor="let theme of themes" value="{{ theme.id }}">{{theme.theme_name}}</option>
+  </select>
+
+  <br>
+  <button class="button btn-danger" (click)="onSubmit()">Delete Theme</button>
+
+</div>

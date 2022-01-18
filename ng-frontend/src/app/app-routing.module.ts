@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {ListGradesComponent} from "./Grades/list-grades/list-grades.component";
-import {CreateGradeComponent} from "./Grades/create-grade/create-grade.component";
+import {ListGradesComponent} from "./forms/Grades/list-grades/list-grades.component";
+import {CreateGradeComponent} from "./forms/Grades/create-grade/create-grade.component";
 import { Error404Component } from "./error404/error404.component";
-import {ListGradesGridComponent} from "./Grades/list-grades-grid/list-grades-grid.component";
+import {ListGradesGridComponent} from "./forms/Grades/list-grades-grid/list-grades-grid.component";
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {UpdateGradeComponent} from "./Grades/update-grade/update-grade.component";
-import {DeleteGradeComponent} from "./Grades/delete-grade/delete-grade.component";
-import {CreateGoalComponent} from "./Goals/create-goal/create-goal.component";
-import {ListGoalsComponent} from "./Goals/list-goals/list-goals.component";
-import {UpdateGoalComponent} from "./Goals/update-goal/update-goal.component";
-import {DeleteGoalComponent} from "./Goals/delete-goal/delete-goal.component";
+import {UpdateGradeComponent} from "./forms/Grades/update-grade/update-grade.component";
+import {DeleteGradeComponent} from "./forms/Grades/delete-grade/delete-grade.component";
+import {CreateGoalComponent} from "./forms/Goals/create-goal/create-goal.component";
+import {ListGoalsComponent} from "./forms/Goals/list-goals/list-goals.component";
+import {UpdateGoalComponent} from "./forms/Goals/update-goal/update-goal.component";
+import {DeleteGoalComponent} from "./forms/Goals/delete-goal/delete-goal.component";
 
 const routes: Routes = [
   { path: '', redirectTo: "dashboard", pathMatch: "full"},

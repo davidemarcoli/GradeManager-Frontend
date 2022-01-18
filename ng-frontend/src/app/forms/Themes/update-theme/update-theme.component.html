@@ -1,0 +1,17 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+
+    <select class="form-control" id="updateGradeDropdown" (change)="onDropdownChange($event)">
+      <option value="0" disabled selected></option>
+      <option *ngFor="let theme of themes" value="{{ theme.id }}">{{theme.theme_name}}</option>
+    </select>
+
+    <label for="themeName">
+      Theme Name
+    </label>
+    <input class="form-control" id="themeName" type="text" ngForm="form" [(ngModel)]="newTheme.theme_name">
+
+    <br>
+    <button class="button btn-warning" type="submit">Update Theme</button>
+  </form>
+</div>
